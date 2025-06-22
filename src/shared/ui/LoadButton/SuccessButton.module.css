@@ -9,6 +9,7 @@
 }
 
 .description {
+    margin-top: 0;
     color: #201B10;
     font-weight: 400;
     font-size: 35px;
@@ -26,4 +27,33 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
+}
+
+.error > .buttonsContainer > .button {
+    color: #FFFFFF;
+    background: #FF5F00;
+}
+
+.error > .description {
+    color: #FF5F00;
+}
+
+.success > .buttonsContainer > .button {
+    color: #201B10;
+    background: #D4FAE6;
+}
+
+.has-file > .buttonsContainer > .button {
+    color: #201B10;
+    background: #CB81FF;
+}
+
+.empty > .buttonsContainer > .button {
+color: #201B10;
+    background: #FFFFFF;
+}
+
+.empty > .buttonsContainer > .button {
+    color: #201B10;
+    background: #FFFFFF;
 }

@@ -1,2 +1,2 @@
-export * from "./useGenerateReport";
-export * from "./useAggregateFile";
+export * from "./generateReport.ts";
+export * from "./aggregateFile.ts";

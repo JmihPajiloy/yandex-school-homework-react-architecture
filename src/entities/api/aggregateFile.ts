@@ -1,9 +1,3 @@
-import type { FileContextType } from "@/components/Upload/types.ts";
-import { useHistoryPush } from "@/entities/history";
-import { useState } from "react";
-
-export type PartialContext = Pick<FileContextType, "file" | "setState">;
-
 export type AggregateFileResponse = {
   average_spend_galactic: number;
   big_spent_at: number;
@@ -16,7 +10,7 @@ export type AggregateFileResponse = {
   total_spend_galactic: number;
 };
 
-async function* aggregateFile(file: File, rows = 10000) {
+export async function* aggregateFile(file: File, rows = 10000) {
   const formData = new FormData();
   formData.append("file", file);
   const response = await fetch(`http://localhost:3000/aggregate?rows=${rows}`, {
@@ -81,40 +75,3 @@ async function* aggregateFile(file: File, rows = 10000) {
     reader.releaseLock();
   }
 }
-
-export const useAggregateFile = ({ file, setState }: PartialContext) => {
-  const push = useHistoryPush();
-  const [stats, setStats] = useState<AggregateFileResponse>();
-  const action = async () => {
-    if (!file) return;
-    setState("pending");
-    try {
-      let lastInfo: AggregateFileResponse | null = null;
-      for await (const item of aggregateFile(file)) {
-        lastInfo = item;
-        console.log(item);
-        setStats(item);
-      }
-      if (!lastInfo) {
-        throw new Error("Empty response!");
-      }
-      setState("success");
-      push({
-        date: new Date().toISOString(),
-        isSuccess: true,
-        filename: file.name,
-        stats: lastInfo,
-      });
-    } catch (err) {
-      console.warn(err);
-      setState("error");
-      push({
-        date: new Date().toISOString(),
-        isSuccess: false,
-        filename: file.name,
-      });
-    }
-  };
-
-  return [stats, action] as const;
-};

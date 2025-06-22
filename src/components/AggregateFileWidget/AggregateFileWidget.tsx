@@ -1,4 +1,4 @@
-import { useAggregateFile } from "@/entities/api";
+import { useAggregateFile } from "@/hooks";
 import { useUpload } from "@/components/Upload/useUpload.ts";
 import { Button } from "@/shared/ui/Button";
 import styles from "./AggregateFileWidget.module.css";
