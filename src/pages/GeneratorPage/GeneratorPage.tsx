@@ -42,6 +42,10 @@ export const GeneratorPage = () => {
     }
   };
 
+  const cancel = () => {
+    setState("empty");
+  };
+
   return (
     <>
       <Header />
@@ -58,10 +62,18 @@ export const GeneratorPage = () => {
           <LoadingButton subtitle="идёт процесс генерации" />
         )}
         {state === "success" && (
-          <SuccessButton title="Done!" subtitle="файл сгенерирован!" />
+          <SuccessButton
+            title="Done!"
+            subtitle="файл сгенерирован!"
+            onCancel={cancel}
+          />
         )}
         {state === "error" && (
-          <ErrorButton title="Ошибка" subtitle="упс, не то..." />
+          <ErrorButton
+            title="Ошибка"
+            subtitle="упс, не то..."
+            onCancel={cancel}
+          />
         )}
       </div>
     </>
