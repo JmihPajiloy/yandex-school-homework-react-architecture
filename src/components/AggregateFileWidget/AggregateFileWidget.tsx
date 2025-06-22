@@ -1,11 +1,11 @@
+import { useFile } from "@/providers/FileProvider";
 import { useAggregateFile } from "@/hooks";
-import { useUpload } from "@/components/Upload/useUpload.ts";
 import { Button } from "@/shared/ui/Button";
-import styles from "./AggregateFileWidget.module.css";
 import { StatsItem } from "@/shared/ui/StatsItem";
+import styles from "./AggregateFileWidget.module.css";
 
 export const AggregateFileWidget = () => {
-  const { state, file, setState } = useUpload();
+  const { state, file, setState } = useFile();
   const [stats, aggregate] = useAggregateFile({ file, setState });
   if (!["pending", "success"].includes(state)) {
     return (

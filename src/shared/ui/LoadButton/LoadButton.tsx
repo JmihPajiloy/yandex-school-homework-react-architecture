@@ -6,21 +6,21 @@ import cn from "classnames";
 
 export type SuccessButtonProps = ComponentProps<"button"> & {
   status: UploadState;
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   onCancel?: () => void;
 };
 
 export const LoadButton = ({
-  title,
+  title = "",
   status,
-  subtitle,
+  subtitle = "",
   onCancel,
   ...props
 }: SuccessButtonProps) => {
   if (status === "pending") {
     return (
-      <div className={styles.mainContainer}>
+      <div className={cn(styles.mainContainer, styles[status])}>
         <div className={styles.button}>
           <svg
             width="61"

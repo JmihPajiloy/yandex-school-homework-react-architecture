@@ -57,3 +57,27 @@ color: #201B10;
     color: #201B10;
     background: #FFFFFF;
 }
+
+.pending > .button {
+    background: #CB81FF;
+    border-radius: 10px;
+    padding: 5px 135.5px;
+    display: flex;
+    place-items: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(20deg);
+    }
+    to {
+        transform: rotate(380deg);
+    }
+}
+
+.spinner {
+    animation-name: spin;
+    animation-duration: 1300ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}

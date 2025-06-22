@@ -1,9 +1,10 @@
 import { useState } from "react";
-import type { UploadState } from "@/components/Upload/types.ts";
 import { generateReport } from "@/entities/api";
 
 export const useGenerateReport = () => {
-  const [state, setState] = useState<UploadState>("empty");
+  const [state, setState] = useState<"pending" | "empty" | "success" | "error">(
+    "empty",
+  );
 
   const download = async () => {
     setState("pending");

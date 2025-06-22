@@ -1,12 +1,30 @@
-import { UploadEmptyButton } from "@/shared/ui/UploadEmptyButton";
-import { useUpload } from "@/components/Upload/useUpload.ts";
-import { UploadWithFileButton } from "@/shared/ui/UploadWithFileButton";
-import { ErrorButton } from "@/shared/ui/ErrorButton";
-import { LoadingButton } from "@/shared/ui/LoadingButton";
-import { SuccessButton } from "@/shared/ui/SuccessButton";
+import { useFile } from "@/providers/FileProvider";
+import { LoadButton } from "@/shared/ui/LoadButton";
+
+const propsList = {
+  empty: () => ({
+    subtitle: "или перетащите сюда",
+    title: "Загрузить файл",
+  }),
+  "has-file": (file: File | null) => ({
+    title: file?.name ?? "",
+    subtitle: "файл загружен!",
+  }),
+  error: (file: File | null) => ({
+    title: file?.name ?? "",
+    subtitle: "упс, не то...",
+  }),
+  pending: () => ({
+    subtitle: "идёт парсинг файла",
+  }),
+  success: (file: File | null) => ({
+    title: file?.name ?? "",
+    subtitle: "готово!",
+  }),
+} as const;
 
 export const LoadFileButton = () => {
-  const { inputRef, file, state, setFile, setState } = useUpload();
+  const { inputRef, file, state, setFile, setState } = useFile();
   const onClick = () => {
     inputRef.current?.click();
   };
@@ -16,40 +34,12 @@ export const LoadFileButton = () => {
     setState("empty");
   };
 
-  switch (state) {
-    case "empty":
-      return (
-        <UploadEmptyButton
-          subtitle="или перетащите сюда"
-          title="Загрузить файл"
-          onClick={onClick}
-        />
-      );
-    case "has-file":
-      return (
-        <UploadWithFileButton
-          title={file?.name ?? ""}
-          subtitle="файл загружен!"
-          onCancel={onCancel}
-        />
-      );
-    case "error":
-      return (
-        <ErrorButton
-          title={file?.name ?? ""}
-          subtitle="упс, не то..."
-          onCancel={onCancel}
-        />
-      );
-    case "pending":
-      return <LoadingButton subtitle="идёт парсинг файла" />;
-    case "success":
-      return (
-        <SuccessButton
-          title={file?.name ?? ""}
-          subtitle="готово!"
-          onCancel={onCancel}
-        />
-      );
-  }
+  return (
+    <LoadButton
+      status={state}
+      onCancel={onCancel}
+      onClick={onClick}
+      {...propsList[state](file)}
+    />
+  );
 };

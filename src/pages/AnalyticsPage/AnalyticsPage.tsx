@@ -1,9 +1,11 @@
+import { FileProvider } from "@/providers/FileProvider";
+
 import { Header } from "@/components/Header";
-import styles from "./AnalyticsPage.module.css";
 import { DragArea } from "@/components/DragArea/DragArea.tsx";
-import { FileProvider } from "@/components/Upload";
 import { LoadFileButton } from "@/components/LoadFileButton";
 import { AggregateFileWidget } from "@/components/AggregateFileWidget";
+
+import styles from "./AnalyticsPage.module.css";
 
 export const AnalyticsPage = () => {
   return (
