@@ -36,9 +36,8 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  padding: 40px;
   min-width: 320px;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
 }
 
 h1 {

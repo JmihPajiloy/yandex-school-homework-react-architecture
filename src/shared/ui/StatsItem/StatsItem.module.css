@@ -6,7 +6,8 @@
     width: 100%;
     background: #FFFFFF;
     border-radius: 24px;
-    padding: 8.5px;
+    padding-top: 8.5px;
+    padding-bottom: 8.5px;
     gap: 5px;
     color: #201B10;
 }

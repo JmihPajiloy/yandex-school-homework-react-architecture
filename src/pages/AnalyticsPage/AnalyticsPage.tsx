@@ -3,7 +3,7 @@ import styles from "./AnalyticsPage.module.css";
 import { DragArea } from "@/components/DragArea/DragArea.tsx";
 import { FileProvider } from "@/components/Upload";
 import { LoadFileButton } from "@/components/LoadFileButton";
-import { AggregateFileWidget } from "@/components/AggregateFileButton";
+import { AggregateFileWidget } from "@/components/AggregateFileWidget";
 
 export const AnalyticsPage = () => {
   return (

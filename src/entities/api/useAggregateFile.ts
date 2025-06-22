@@ -100,7 +100,7 @@ export const useAggregateFile = ({ file, setState }: PartialContext) => {
       }
       setState("success");
       push({
-        date: new Date(),
+        date: new Date().toISOString(),
         isSuccess: true,
         filename: file.name,
         stats: lastInfo,
@@ -109,7 +109,7 @@ export const useAggregateFile = ({ file, setState }: PartialContext) => {
       console.warn(err);
       setState("error");
       push({
-        date: new Date(),
+        date: new Date().toISOString(),
         isSuccess: false,
         filename: file.name,
       });

@@ -1,7 +1,8 @@
-.main {
+
+.buttonContainer {
     display: flex;
-    flex-direction: column;
-    width: 100vw;
-    min-height: 100vh;
-    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
 }

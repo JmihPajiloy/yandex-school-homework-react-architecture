@@ -1,10 +1,19 @@
-import styles from "./HistoryPage.module.css";
 import { Header } from "@/components/Header";
+import { HistoryList } from "@/components/HistoryList";
+import { GenerateMoreButton } from "@/components/GenerateMoreButton";
+import { HistoryClearButton } from "@/components/HistoryClearButton";
+
+import styles from "./HistoryPage.module.css";
 
 export const HistoryPage = () => {
   return (
-    // <main className={styles.main}>
-      <Header/>
-    // </main>
+    <>
+      <Header />
+      <HistoryList />
+      <div className={styles.buttonContainer}>
+        <GenerateMoreButton />
+        <HistoryClearButton />
+      </div>
+    </>
   );
 };

@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18.5px 20px;
+    border-radius: 40px;
+    background: #CB81FF;
+    color: #201B10;
+}
+
+.item {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+}
+
+.item[aria-disabled="true"] {
+    color: #8F64AE;
+}

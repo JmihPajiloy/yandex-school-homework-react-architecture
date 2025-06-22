@@ -1,3 +1,3 @@
-export * from "./AnalyticsPage/AnalyticsPage";
-export * from "./GeneratorPage/GeneratorPage";
-export * from "./HistoryPage/HistoryPage";
+export * from "./AnalyticsPage";
+export * from "./GeneratorPage";
+export * from "./HistoryPage";
