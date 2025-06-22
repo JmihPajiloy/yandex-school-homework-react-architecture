@@ -1,11 +1,11 @@
 import { CancelButton } from "@/shared/ui/CancelButton";
 import styles from "./SuccessButton.module.css";
-import type { UploadState } from "@/components/Upload/types.ts";
+import type { FileState } from "@/providers/FileProvider";
 import type { ComponentProps } from "react";
 import cn from "classnames";
 
 export type SuccessButtonProps = ComponentProps<"button"> & {
-  status: UploadState;
+  status: FileState;
   title?: string;
   subtitle?: string;
   onCancel?: () => void;

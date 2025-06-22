@@ -1,7 +1,8 @@
 import { DocumentIcon, HappyEmojiIcon, SadEmojiIcon } from "@/shared/icons";
 import styles from "./HistoryItem.module.css";
+import type { ComponentProps } from "react";
 
-export type HistoryItemProps = {
+export type HistoryItemProps = ComponentProps<"button"> & {
   filename: string;
   date: Date;
   isSuccess: boolean;
@@ -11,9 +12,10 @@ export const HistoryItem = ({
   filename,
   date,
   isSuccess,
+  ...props
 }: HistoryItemProps) => {
   return (
-    <div className={styles.container}>
+    <button className={styles.container} {...props}>
       <div className={styles.item}>
         <DocumentIcon />
         <span>{filename}</span>
@@ -33,6 +35,6 @@ export const HistoryItem = ({
         <span>Не удалось обработать</span>
         <SadEmojiIcon />
       </div>
-    </div>
+    </button>
   );
 };

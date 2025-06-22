@@ -1,4 +1,4 @@
-import type { FileContextType } from "@/components/Upload/types.ts";
+import type { FileContextType } from "@/providers/FileProvider";
 import * as React from "react";
 import { useState } from "react";
 

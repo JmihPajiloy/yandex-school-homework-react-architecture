@@ -1,4 +1,4 @@
-import type { FileContextType } from "@/components/Upload/types.ts";
+import type { FileContextType } from "@/providers/FileProvider";
 import { useHistoryPush } from "@/entities/history";
 import { useState } from "react";
 import { aggregateFile, type AggregateFileResponse } from "@/entities/api";
@@ -15,7 +15,6 @@ export const useAggregateFile = ({ file, setState }: PartialContext) => {
       let lastInfo: AggregateFileResponse | null = null;
       for await (const item of aggregateFile(file)) {
         lastInfo = item;
-        console.log(item);
         setStats(item);
       }
       if (!lastInfo) {

@@ -11,16 +11,12 @@ export const HistoryList = () => {
   const pop = useHistoryPop();
 
   const [openedModalID, setOpenedModalID] = useState<number>(-1);
-  console.log(openedModalID);
   return (
     <div className={styles.list}>
       {history.map((item, index) => (
-        <button
-          key={index}
-          className={styles.item}
-          onClick={() => item.isSuccess && setOpenedModalID(index)}
-        >
+        <div key={index} className={styles.item}>
           <HistoryItem
+            onClick={() => item.isSuccess && setOpenedModalID(index)}
             filename={item.filename}
             date={new Date(item.date)}
             isSuccess={item.isSuccess}
@@ -34,7 +30,7 @@ export const HistoryList = () => {
           >
             {item.isSuccess && <ModalStatsList {...item.stats} />}
           </Modal>
-        </button>
+        </div>
       ))}
     </div>
   );
