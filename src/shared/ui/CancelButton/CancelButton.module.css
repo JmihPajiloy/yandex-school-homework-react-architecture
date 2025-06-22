@@ -1,0 +1,7 @@
+.cancelButton {
+    border-radius: 10px;
+    padding: 19px;
+    background: #201B10;
+    display: flex;
+    place-items: center;
+}

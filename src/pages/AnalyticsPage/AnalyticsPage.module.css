@@ -1,0 +1,11 @@
+.paragraph {
+    color: #201B10;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 110%;
+    text-align: center;
+}
+
+.paragraph > span {
+    font-weight: 700;
+}

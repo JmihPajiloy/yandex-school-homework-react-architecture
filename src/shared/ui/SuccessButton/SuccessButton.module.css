@@ -1,0 +1,29 @@
+.button {
+    background: #D4FAE6;
+    color: #201B10;
+    border-radius: 10px;
+    padding: 15px 27px;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 110%;
+}
+
+.description {
+    color: #201B10;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 110%;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}

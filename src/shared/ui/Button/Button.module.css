@@ -1,0 +1,28 @@
+.default {
+  padding: 20.5px 27px;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 110%;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.default:disabled {
+  background: #C0C0C0;
+  color: #787878;
+}
+
+.green {
+  background: #2AE881;
+  color: #201B10;
+}
+
+.black {
+  background: #201B10;
+  color: #FFFFFF;
+}
+
+.yellow {
+  background: #FCE300;
+  color: #201B10;
+}

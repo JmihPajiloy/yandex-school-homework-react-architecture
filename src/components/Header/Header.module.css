@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+.header > div:first-child {
+    flex-grow: 1;
+}
