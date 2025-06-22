@@ -1,17 +1,17 @@
 @keyframes spin {
     from {
-        transform: rotate(0deg);
+        transform: rotate(20deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: rotate(380deg);
     }
 }
 
 .spinner {
     animation-name: spin;
-    animation-duration: 1500ms;
+    animation-duration: 1300ms;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
 }
 
 .button {
