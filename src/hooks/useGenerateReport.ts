@@ -33,5 +33,5 @@ export const useGenerateReport = () => {
     setState("empty");
   };
 
-  return [download, cancel] as const;
+  return [state, download, cancel] as const;
 };

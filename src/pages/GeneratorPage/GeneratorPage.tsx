@@ -7,7 +7,7 @@ import { ErrorButton } from "@/shared/ui/ErrorButton";
 import { useGenerateReport } from "@/hooks/useGenerateReport.ts";
 
 export const GeneratorPage = () => {
-  const [download, cancel] = useGenerateReport();
+  const [state, download, cancel] = useGenerateReport();
 
   return (
     <>
