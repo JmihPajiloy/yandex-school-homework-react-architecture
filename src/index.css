@@ -29,6 +29,7 @@ a:hover {
   align-items: center;
   gap: 80px;
   padding: 40px;
+  flex-grow: 1;
 }
 
 body {
@@ -37,7 +38,7 @@ body {
   flex-direction: column;
   padding: 40px;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
 }
 
 h1 {

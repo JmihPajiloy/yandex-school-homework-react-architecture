@@ -1,0 +1,18 @@
+.area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EACDFF;
+    padding: 60px;
+    width: 100%;
+    border-radius: 40px;
+}
+
+.area[data-dragging = "true"] {
+    background: #D4FAE6;
+}
+
+.area[aria-invalid = "true"] {
+    background: transparent;
+    border: 1px #FF5F00;
+}

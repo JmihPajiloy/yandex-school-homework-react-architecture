@@ -1,5 +1,5 @@
 .button {
-    background: #D4FAE6;
+    background: #CB81FF;
     color: #201B10;
     border-radius: 10px;
     padding: 15px 27px;
@@ -9,7 +9,6 @@
 }
 
 .description {
-    margin: 0;
     color: #201B10;
     font-weight: 400;
     font-size: 35px;
