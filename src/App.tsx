@@ -5,9 +5,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<AnalyticsPage/>} />
-        <Route path="/generator" element={<GeneratorPage/>} />
-        <Route path="/history" element={<HistoryPage/>} />
+        <Route index element={<AnalyticsPage />} />
+        <Route path="/history" element={<HistoryPage />} />
+        <Route path="/generator" element={<GeneratorPage />} />
       </Routes>
     </BrowserRouter>
   );
